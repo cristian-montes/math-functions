@@ -59,6 +59,8 @@ export function sumAndMultiplyThreeNumbers(a, b, c) { //eslint-disable-line
     const newProduct = multiply(a, b).shift();
     const totalProduct = multiply(newProduct, c).shift();
 
+   
+    
     return [totalSum, totalProduct, `${a} and ${b} and ${c} sum to ${totalSum}.`, `The product of ${a} and ${b} and ${c} is ${totalProduct}.`];
 }
 
@@ -81,7 +83,20 @@ to use the + operator for string concatenation.
 */
 
 export function sumArrayWithThreeNumbers(sumArr) {
+    const initialValue = 0;
+    const reducer = (a, b) => {
+        return sum(a, b).shift();
+    };
+    const total = sumArr.reduce(reducer, initialValue);
+    
+    return [total, `${sumArr} was passed in as an array of numbers, and 9 is their sum.`];
+    
 
+
+
+
+
+    // return [totalsum, `${sumArr} was passed in as an array of numbers, and ${totalsum}is their sum.`];
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
@@ -131,4 +146,18 @@ export function multiplyAnyArray(dynamicArray) { //eslint-disable-line
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 // You're done! Submit the link to the repo following the instructions in Canvas.
 
-// console.log(sumAndMultiplyThreeNumbers(2, 3, 4));
+// console.log(multiplyArrayWithThreeNumbers([1, 2, 3]));
+// const product = multiply(4, 6).slice(0, 1);;
+// const newArr = product.slice(0, 1);
+// console.log(product, 'SECOND');
+
+
+
+
+// const laSuma = sum(a, b);
+// const newSum = laSuma.slice(0, 1);
+// console.log(laSuma);
+
+// const laNuevaSuma = sum(newSum, c);
+// const totalSum = laNuevaSuma.slice(0, 1);
+// console.log(totalSum);
