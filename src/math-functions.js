@@ -28,7 +28,7 @@ Write a function called multiply() that takes in two numbers as arguments and re
 
 export function multiply(a, b) {
     const product = a * b;
-    return [product,`The product of ${a} and ${b} is ${product}.`];
+    return [product, `The product of ${a} and ${b} is ${product}.`];
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
@@ -53,7 +53,13 @@ how to do this. However, you may continue to use the + operator for string conca
 */
 
 export function sumAndMultiplyThreeNumbers(a, b, c) { //eslint-disable-line
+    const newSum = sum(a, b).shift();
+    const totalSum = sum(newSum, c).shift();
 
+    const newProduct = multiply(a, b).shift();
+    const totalProduct = multiply(newProduct, c).shift();
+
+    return [totalSum, totalProduct, `${a} and ${b} and ${c} sum to ${totalSum}.`, `The product of ${a} and ${b} and ${c} is ${totalProduct}.`];
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
@@ -124,3 +130,5 @@ export function multiplyAnyArray(dynamicArray) { //eslint-disable-line
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 // You're done! Submit the link to the repo following the instructions in Canvas.
+
+// console.log(sumAndMultiplyThreeNumbers(2, 3, 4));
