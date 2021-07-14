@@ -91,12 +91,6 @@ export function sumArrayWithThreeNumbers(sumArr) {
     
     return [total, `${sumArr} was passed in as an array of numbers, and 9 is their sum.`];
     
-
-
-
-
-
-    // return [totalsum, `${sumArr} was passed in as an array of numbers, and ${totalsum}is their sum.`];
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
@@ -119,7 +113,14 @@ you may continue to use the + operator for string concatenation.
 */
 
 export function multiplyArrayWithThreeNumbers(multArr) { //eslint-disable-line
+    const initialValue = 1;
+    const product = (a, b) => {
+        return multiply(a, b).shift();
+    };
 
+    const total = multArr.reduce(product, initialValue);
+
+    return [total, `The numbers ${multArr} have a product of ${total}.`];
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
@@ -146,18 +147,6 @@ export function multiplyAnyArray(dynamicArray) { //eslint-disable-line
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 // You're done! Submit the link to the repo following the instructions in Canvas.
 
-// console.log(multiplyArrayWithThreeNumbers([1, 2, 3]));
-// const product = multiply(4, 6).slice(0, 1);;
-// const newArr = product.slice(0, 1);
-// console.log(product, 'SECOND');
+// const total = dynamicArray.reduce((a, b) => multiply(a, b).shift(), 1);
 
-
-
-
-// const laSuma = sum(a, b);
-// const newSum = laSuma.slice(0, 1);
-// console.log(laSuma);
-
-// const laNuevaSuma = sum(newSum, c);
-// const totalSum = laNuevaSuma.slice(0, 1);
-// console.log(totalSum);
+// return [total, `The numbers ${dynamicArray} have a product of ${total}.`];
